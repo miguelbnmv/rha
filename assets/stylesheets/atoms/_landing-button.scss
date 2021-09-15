@@ -1,0 +1,25 @@
+.landing-btn {
+  display: grid;
+  grid: 1fr/10vw auto;
+  gap: 2rem;
+  align-items: center;
+  padding: $margin-sm;
+  border: $light-border;
+  border-radius: $b-radius-1;
+
+  @include phablet-down {
+    width: 100%;
+    grid: 1fr auto/1fr;
+    gap: 1rem;
+    justify-items: center;
+  }
+
+  &:hover {
+    border-color: $light-primary;
+  }
+
+  >img {
+    width: 8vw;
+    min-width: 5rem;
+  }
+}

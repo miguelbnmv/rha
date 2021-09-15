@@ -1,0 +1,27 @@
+.btn {
+	@include transition;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 2rem;
+	border-radius: $b-radius-1;
+	text-transform: uppercase;
+	text-decoration: none;
+
+	&-primary {
+		background-color: $light-primary;
+		color: $white;
+
+		&:hover {
+			background-color: darken($light-primary, 5%);
+		}
+	}
+}
+
+.inline-link {
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	text-transform: none;
+	letter-spacing: inherit;
+}

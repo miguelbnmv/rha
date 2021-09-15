@@ -1,0 +1,43 @@
+aside {
+  height: fit-content;
+  margin-bottom: $margin-md;
+  padding: $margin-md;
+  border-radius: $b-radius-1;
+  box-shadow: 0 0 1rem 0 rgba(51, 51, 51, 0.5);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  >a {
+    display: block;
+    margin-bottom: $margin-xs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    margin-bottom: $margin-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+
+    a {
+      font-weight: $font-weight-regular;
+      text-transform: capitalize;
+    }
+
+    img {
+      width: 2rem;
+      margin-right: $margin-sm;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+footer {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: $margin-md;
+  padding: 0 $margin-lg;
+  background-color: $light-primary;
+
+  div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      height: 70%;
+      margin-right: $margin-lg;
+
+      @include tablet-down {
+        width: 80%;
+        margin-right: 0;
+      }
+    }
+
+    >a {
+      margin-right: $margin-md;
+      color: $white;
+
+      @include tablet-down {
+        margin: $margin-sm 0 $margin-sm;
+      }
+
+      &:hover {
+        color: $dark;
+      }
+    }
+
+    @include tablet-down {
+      flex-direction: column;
+    }
+  }
+
+  @include desktop-down {
+    height: initial;
+    flex-direction: column;
+    padding: $margin-md 0;
+  }
+
+  >span {
+    color: $white;
+    
+    @include desktop-down {
+      margin-top: $margin-sm;
+    }
+  }
+}

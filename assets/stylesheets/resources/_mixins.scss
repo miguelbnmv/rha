@@ -1,0 +1,131 @@
+/*
+--------------------------------------------------------------------------------
+Fonts auxiliar mixins
+--------------------------------------------------------------------------------
+*/
+
+@mixin responsive_font($min, $max) {
+  font-size: #{$min}rem;
+
+  @include resolution(600px) {
+    font-size: calc(#{$min}rem + ((#{$max} * 10) - (#{$min} * 10)) * ((100vw - 650px) / 550));
+  }
+
+  @include resolution(1200px) {
+    font-size: #{$max}rem;
+  }
+}
+
+/*
+--------------------------------------------------------------------------------
+Mobile first queries
+--------------------------------------------------------------------------------
+*/
+@mixin phablet-down {
+  @media (max-width: 556px) {
+    @content;
+  }
+}
+
+@mixin phablet {
+  @media (min-width: 556px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+//@mixin desktop      { @media (min-width: 992px) { @content; } }
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media (max-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin resolution($r) {
+  @media (min-width: #{$r}) {
+    @content;
+  }
+}
+
+/*
+--------------------------------------------------------------------------------
+Retina queries
+--------------------------------------------------------------------------------
+*/
+@mixin retina($dp) {
+  @media (-webkit-min-device-pixel-ratio: #{$dp}) {
+    @content;
+  }
+}
+
+/*
+--------------------------------------------------------------------------------
+Position
+--------------------------------------------------------------------------------
+*/
+@mixin position ($position: null, $top: null, $left: null, $bottom: null, $right: null) {
+  position: $position;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+/*
+--------------------------------------------------------------------------------
+Fix for mobile devices
+--------------------------------------------------------------------------------
+*/
+@mixin remove_tap_highlight() {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+@mixin smooth_scroll() {
+  -webkit-overflow-scrolling: touch;
+}
+
+/*
+--------------------------------------------------------------------------------
+Custom helpers
+--------------------------------------------------------------------------------
+*/
+@mixin no_select() {
+  user-select: none;
+}
+
+@mixin transition($type: all, $duration: .3) {
+  transition: $type #{$duration}s cubic-bezier(.19, 1, .22, 1)
+}
+
+@mixin transition-cubic() {
+  transition: 0.3s cubic-bezier(0, 0, .3, .9);
+}
+
+@mixin translate($x, $y) {
+  transform: translate($x, $y);
+}
+
+@mixin show() {
+  display: block;
+}
+
+@mixin hide() {
+  display: none;
+}

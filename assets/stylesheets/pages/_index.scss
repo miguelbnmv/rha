@@ -1,0 +1,24 @@
+section.landing {
+  width: 80%;
+  max-width: $container-max-width;
+  display: grid;
+  grid-template-columns: 1fr 30vw;
+  gap: $margin-lg;
+  align-items: center;
+
+  @include desktop-down {
+    grid: 1fr auto / 1fr;
+  }
+
+  >div {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $margin-md;
+
+    @include phablet-down {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+}

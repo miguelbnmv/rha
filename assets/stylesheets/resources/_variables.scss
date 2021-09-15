@@ -1,0 +1,56 @@
+/*
+--------------------------------------------------------------------------------
+FONTS
+--------------------------------------------------------------------------------
+*/
+
+$fira-sans: 'Fira Sans';
+$font-family-base: $fira-sans,
+sans-serif;
+
+$font-size-baseline: 1rem;
+/* 16px */
+$font-size-sm: $font-size-baseline * 0.875;
+/* 14px */
+
+$h1-font-size: $font-size-baseline * 2;
+/* 32px */
+$h2-font-size: $font-size-baseline * 1.5;
+/* 24px */
+$h3-font-size: $font-size-baseline * 1;
+/* 16px */
+$h4-font-size: $font-size-baseline * 0.75;
+/* 12px */
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi: 600;
+$font-weight-bold: 700;
+
+/*
+--------------------------------------------------------------------------------
+VARIABLES
+--------------------------------------------------------------------------------
+*/
+$gray-border: 1px solid $gray;
+$light-border: 1px solid $dark;
+
+/*
+--------------------------------------------------------------------------------
+Border-radius
+--------------------------------------------------------------------------------
+*/
+$b-radius-1: $font-size-baseline * 0.25;
+$b-radius-2: $font-size-baseline * 0.5;
+
+/*
+--------------------------------------------------------------------------------
+CONTAINER
+--------------------------------------------------------------------------------
+*/
+$container-max-width: 1500px;
+$margin-xs: .5rem;
+$margin-sm: 1rem;
+$margin-md: 2rem;
+$margin-lg: 4rem;
+$margin-xl: 9rem;

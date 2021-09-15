@@ -1,0 +1,58 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCQP</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logos/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logos/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logos/logo.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css">
+</head>
+
+<body>
+  <main class="login">
+    <section>
+      <div class="login-images">
+        <img src="assets/images/logos/logo.png" alt="RHA Logo" />
+        <div></div>
+        <span>Respiratory Care</br>Quality Plataform</span>
+      </div>
+      <div class="switch">
+        <button id="button-login" onclick=changeContent(true)>login</button>
+        <button class="disabled" id="button-signup" onclick=changeContent(false)>signup</button>
+      </div>
+      <fieldset>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <span id="login-info">Don't remember your password?</span>
+        <button class="btn btn-primary" id="login-button" onclick=redirect()>Log In</button>
+      </fieldset>
+    </section>
+  </main>
+</body>
+</html>
+
+<script>
+function changeContent(val) {
+  if(val) {
+    document.getElementById("login-button").textContent = "Log In";
+    document.getElementById("login-info").textContent = "Don't remember your password?";
+    document.getElementById("button-signup").classList.add('disabled');
+    document.getElementById("button-login").classList.remove('disabled');
+  } else {
+    document.getElementById("login-button").textContent = "Sign In";
+    document.getElementById("login-info").textContent = "By signing up, you agree to our terms of service and privacy policy.";
+    document.getElementById("button-login").classList.add('disabled');
+    document.getElementById("button-signup").classList.remove('disabled');
+  }
+}
+
+function redirect() {
+  window.location.href = "index.html";
+}
+</script>

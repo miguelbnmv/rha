@@ -1,0 +1,13 @@
+.switch {
+  display: flex;
+
+  button {
+    width: 50%;
+    padding: $margin-sm;
+    border-bottom: $light-border;
+
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+}

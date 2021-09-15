@@ -1,0 +1,63 @@
+header {
+    margin-bottom: $margin-md;
+
+    >div,
+    nav {
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 $margin-lg;
+
+        @include tablet-down {
+            padding: 0 $margin-sm;
+        }
+
+        @include phablet-down {
+            height: initial !important;
+            flex-direction: column;
+            padding: $margin-sm 0;
+        }
+    }
+
+    >div {
+        a {
+            @include responsive_font($min: 1.625, $max: 2);
+            @include phablet-down {
+                margin-bottom: $margin-sm;
+                text-align: center;
+            }
+        }
+
+        span {
+            white-space: nowrap;
+        }
+    }
+
+    nav {
+        height: 5vh;
+        background-color: $light-primary;
+
+        a {
+            color: $white;
+
+            &:hover {
+                color: $dark;
+            }
+        }
+
+        div a {
+            margin-right: $margin-md;
+
+            @include tablet-down {
+                margin-right: $margin-sm;
+            }
+
+            @include phablet-down {
+                display: block;
+                margin: 0 0 $margin-sm 0;
+                text-align: center;
+            }
+        }
+    }
+}

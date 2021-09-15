@@ -1,0 +1,58 @@
+main.login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+
+  section {
+    width: 30vw;
+    height: fit-content;
+    background-color: $white;
+    border-radius: $b-radius-1;
+    box-shadow: 0 0 1rem 0 rgba(51, 51, 51, 0.5);
+
+    @include desktop-down {
+      width: 50vw;
+    }
+
+    @include tablet-down {
+      width: 80vw;
+    }
+
+    .login-images {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $margin-md;
+
+      div {
+        height: 6rem;
+        margin: 0 $margin-sm;
+        border: $gray-border;
+      }
+
+      img {
+        width: 6rem;
+      }
+    }
+
+    fieldset {
+      padding: $margin-md;
+      text-align: center;
+
+      input:first-child {
+        margin-bottom: $margin-sm;
+      }
+
+      span {
+        height: 4rem;
+        margin-top: $margin-sm;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
