@@ -883,6 +883,18 @@ main {
   border-radius: 0.25rem;
 }
 
+.module p {
+  margin: 2rem 0 1rem;
+}
+
+.module .overall {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem;
+  color: #FDFFFF;
+  background-color: #D00000;
+}
+
 section.landing {
   width: 80%;
   max-width: 1500px;
