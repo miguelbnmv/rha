@@ -1,0 +1,9 @@
+.module {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $margin-md;
+  border: $gray-border;
+  border-radius: $b-radius-1;
+  //box-shadow: 0 0 1rem 0 rgba(51, 51, 51, 0.5);
+}

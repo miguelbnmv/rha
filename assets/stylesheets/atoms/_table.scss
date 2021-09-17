@@ -18,9 +18,21 @@ table {
     tr {
       display: flex;
       flex-direction: column;
-      color: $white;
-      background-color: $primary;
-      text-transform: uppercase;
+
+      th {
+        vertical-align: middle;
+        color: $white;
+        background-color: $primary;
+        text-transform: uppercase;
+
+        &:nth-child(2), &:nth-child(4) {
+          width: 10%;
+        }
+
+        &:last-child, &:nth-last-child(2), &:nth-child(3) {
+          width: 5%;
+        }
+      }
 
       @include tablet {
         display: table-row;
@@ -42,6 +54,10 @@ table {
       flex-direction: column;
       flex-grow: 1;
       background-color: $white;
+
+      td {
+        vertical-align: middle;
+      }
 
       &:nth-child(2n) {
         background-color: $gray;

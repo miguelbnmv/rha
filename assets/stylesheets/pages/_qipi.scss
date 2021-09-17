@@ -1,0 +1,27 @@
+section.qipi {
+  width: 80%;
+  max-width: $container-max-width;
+
+  .module-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+
+    table {
+      width: 100%;
+    }
+
+    div:first-child, div:last-child {
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+
+    div:last-child {
+      grid-column-start: 3;
+    }
+
+    @include tablet-down {
+      grid: 1fr auto / 1fr;
+    }
+  }
+}
