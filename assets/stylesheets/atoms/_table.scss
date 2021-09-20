@@ -7,9 +7,26 @@ table {
     display: table;
   }
 
+  td {
+    width: 10rem;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @include tablet {
+      white-space: inherit;
+    }
+  }
+
   th,
   td {
+    height: 4rem;
     padding: 1rem;
+
+    @include tablet {
+      display: table-cell;
+    }
   }
 
   thead {
@@ -26,11 +43,15 @@ table {
         text-transform: uppercase;
 
         &:nth-child(2), &:nth-child(4) {
-          width: 10%;
+          @include tablet {
+            width: 10%;
+          }
         }
 
         &:last-child, &:nth-last-child(2), &:nth-child(3) {
-          width: 5%;
+          @include tablet {
+            width: 5%;
+          }
         }
       }
 

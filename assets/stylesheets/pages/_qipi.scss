@@ -7,6 +7,10 @@ section.qipi {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
 
+    @include desktop-down {
+      grid-template-columns: 1fr;
+    }
+
     table {
       width: 100%;
     }
@@ -14,14 +18,19 @@ section.qipi {
     div:first-child, div:last-child {
       grid-row-start: 1;
       grid-row-end: 3;
+
+      @include desktop-down {
+        grid-row-start: initial;
+        grid-row-end: initial;
+      }
     }
 
     div:last-child {
       grid-column-start: 3;
-    }
 
-    @include tablet-down {
-      grid: 1fr auto / 1fr;
+      @include desktop-down {
+        grid-column-start: initial;
+      }
     }
   }
 }

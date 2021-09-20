@@ -468,9 +468,31 @@ table {
   }
 }
 
+table td {
+  width: 10rem;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+  table td {
+    white-space: inherit;
+  }
+}
+
 table th,
 table td {
+  height: 4rem;
   padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  table th,
+  table td {
+    display: table-cell;
+  }
 }
 
 table thead {
@@ -494,12 +516,16 @@ table thead tr th {
   text-transform: uppercase;
 }
 
-table thead tr th:nth-child(2), table thead tr th:nth-child(4) {
-  width: 10%;
+@media (min-width: 768px) {
+  table thead tr th:nth-child(2), table thead tr th:nth-child(4) {
+    width: 10%;
+  }
 }
 
-table thead tr th:last-child, table thead tr th:nth-last-child(2), table thead tr th:nth-child(3) {
-  width: 5%;
+@media (min-width: 768px) {
+  table thead tr th:last-child, table thead tr th:nth-last-child(2), table thead tr th:nth-child(3) {
+    width: 5%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -868,6 +894,9 @@ main {
 }
 
 .module {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -881,6 +910,12 @@ main {
   padding: 2rem;
   border: 1px solid #E0E0E0;
   border-radius: 0.25rem;
+}
+
+@media (max-width: 767px) {
+  .module {
+    overflow-x: hidden;
+  }
 }
 
 .module p {
@@ -1108,6 +1143,13 @@ section.qipi .module-list {
   gap: 2rem;
 }
 
+@media (max-width: 1025px) {
+  section.qipi .module-list {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 section.qipi .module-list table {
   width: 100%;
 }
@@ -1118,14 +1160,23 @@ section.qipi .module-list div:first-child, section.qipi .module-list div:last-ch
   grid-row-end: 3;
 }
 
+@media (max-width: 1025px) {
+  section.qipi .module-list div:first-child, section.qipi .module-list div:last-child {
+    -ms-grid-row: initial;
+        grid-row-start: initial;
+    grid-row-end: initial;
+  }
+}
+
 section.qipi .module-list div:last-child {
   -ms-grid-column: 3;
       grid-column-start: 3;
 }
 
-@media (max-width: 767px) {
-  section.qipi .module-list {
-    grid: 1fr auto / 1fr;
+@media (max-width: 1025px) {
+  section.qipi .module-list div:last-child {
+    -ms-grid-column: initial;
+        grid-column-start: initial;
   }
 }
 /*# sourceMappingURL=application.css.map */
