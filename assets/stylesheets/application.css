@@ -930,6 +930,10 @@ main {
   background-color: #D00000;
 }
 
+.module img {
+  margin-top: 2rem;
+}
+
 section.landing {
   width: 80%;
   max-width: 1500px;
