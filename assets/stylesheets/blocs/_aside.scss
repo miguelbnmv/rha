@@ -9,7 +9,7 @@ aside {
     margin-bottom: 0;
   }
 
-  >a {
+  >a, >button {
     display: block;
     margin-bottom: $margin-xs;
 
@@ -38,6 +38,14 @@ aside {
     img {
       width: 2rem;
       margin-right: $margin-sm;
+    }
+  }
+
+  >button {
+    text-align: left;
+    
+    &:hover {
+      color: $light-primary;
     }
   }
 }

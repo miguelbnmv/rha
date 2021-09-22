@@ -415,7 +415,7 @@ strong {
   letter-spacing: inherit;
 }
 
-fieldset input {
+fieldset input:not([type=radio]) {
   -webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   width: 100%;
@@ -427,9 +427,15 @@ fieldset input {
   border-radius: 0.25rem;
 }
 
-fieldset input:focus {
+fieldset input:not([type=radio]):focus {
   outline: none;
   border-color: #333333;
+}
+
+input[type=radio] {
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
 }
 
 /*
@@ -511,8 +517,8 @@ table thead tr {
 
 table thead tr th {
   vertical-align: middle;
-  color: #FDFFFF;
-  background-color: #6A040F;
+  color: #6A040F;
+  border: 1px solid #6A040F;
   text-transform: uppercase;
 }
 
@@ -564,6 +570,7 @@ table tbody tr {
 
 table tbody tr td {
   vertical-align: middle;
+  border: 1px solid #6A040F;
 }
 
 table tbody tr:nth-child(2n) {
@@ -605,57 +612,6 @@ table tbody tr:nth-child(2n) {
 .landing-btn > img {
   width: 10vw;
   min-width: 5rem;
-}
-
-aside {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-bottom: 2rem;
-  padding: 2rem;
-  border-radius: 0.25rem;
-  -webkit-box-shadow: 0 0 1rem 0 rgba(51, 51, 51, 0.5);
-          box-shadow: 0 0 1rem 0 rgba(51, 51, 51, 0.5);
-}
-
-aside:last-child {
-  margin-bottom: 0;
-}
-
-aside > a {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-aside > a:last-child {
-  margin-bottom: 0;
-}
-
-aside p {
-  margin-bottom: 2rem;
-}
-
-aside p:last-child {
-  margin-bottom: 0;
-}
-
-aside div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-aside div a {
-  font-weight: 400;
-  text-transform: capitalize;
-}
-
-aside div img {
-  width: 2rem;
-  margin-right: 1rem;
 }
 
 .report {
@@ -922,6 +878,10 @@ main {
   margin: 2rem 0 1rem;
 }
 
+.module p:first-child {
+  margin-top: 0;
+}
+
 .module .overall {
   width: 100%;
   margin: 1rem 0;
@@ -932,6 +892,69 @@ main {
 
 .module img {
   margin-top: 2rem;
+}
+
+.module h2 {
+  margin: 0;
+}
+
+aside {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 0 1rem 0 rgba(51, 51, 51, 0.5);
+          box-shadow: 0 0 1rem 0 rgba(51, 51, 51, 0.5);
+}
+
+aside:last-child {
+  margin-bottom: 0;
+}
+
+aside > a, aside > button {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+aside > a:last-child, aside > button:last-child {
+  margin-bottom: 0;
+}
+
+aside p {
+  margin-bottom: 2rem;
+}
+
+aside p:last-child {
+  margin-bottom: 0;
+}
+
+aside div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside div a {
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+aside div img {
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+aside > button {
+  text-align: left;
+}
+
+aside > button:hover {
+  color: #D00000;
 }
 
 section.landing {
@@ -1156,31 +1179,157 @@ section.qipi .module-list {
 
 section.qipi .module-list table {
   width: 100%;
+  margin-top: 0;
 }
 
-section.qipi .module-list div:first-child, section.qipi .module-list div:last-child {
-  -ms-grid-row: 1;
-      grid-row-start: 1;
-  grid-row-end: 3;
+section.manufacturers {
+  width: 80%;
+  max-width: 1500px;
+}
+
+section.manufacturers .module-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+section.manufacturers .module-list .module:last-child {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 @media (max-width: 1025px) {
-  section.qipi .module-list div:first-child, section.qipi .module-list div:last-child {
-    -ms-grid-row: initial;
-        grid-row-start: initial;
-    grid-row-end: initial;
+  section.manufacturers .module-list .module:last-child {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 1;
   }
-}
-
-section.qipi .module-list div:last-child {
-  -ms-grid-column: 3;
-      grid-column-start: 3;
 }
 
 @media (max-width: 1025px) {
-  section.qipi .module-list div:last-child {
-    -ms-grid-column: initial;
-        grid-column-start: initial;
+  section.manufacturers .module-list {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
+}
+
+section.providers {
+  width: 80%;
+  max-width: 1500px;
+}
+
+section.providers table thead {
+  font-size: .75rem;
+}
+
+section.providers table thead th {
+  width: initial;
+}
+
+@media (min-width: 768px) {
+  section.providers table thead th:first-child {
+    width: 10%;
+  }
+}
+
+section.providers table .ball {
+  width: 2rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  background-color: #D00000;
+}
+
+section.providers table .ball span {
+  width: 100%;
+  color: #FDFFFF;
+  text-align: center;
+}
+
+section.providers img {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+section.data-entry {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20vw;
+      grid-template-columns: 1fr 20vw;
+  gap: 4rem;
+  width: 80%;
+  max-width: 1500px;
+}
+
+@media (max-width: 1025px) {
+  section.data-entry {
+    grid: auto 1fr / 1fr;
+  }
+}
+
+@media (max-width: 1025px) {
+  section.data-entry > div {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+section.data-entry > div h3 {
+  margin-bottom: 2rem;
+}
+
+section.data-entry > div form {
+  display: none;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 1025px) {
+  section.data-entry > div form {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+section.data-entry > div form#admission-details {
+  display: -ms-grid;
+  display: grid;
+}
+
+section.data-entry > div form.one-row {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+section.data-entry > div form fieldset > label {
+  display: block;
+  margin: 2rem 0 0.5rem;
+}
+
+section.data-entry > div form fieldset > label:first-child {
+  margin-top: 0;
+}
+
+section.data-entry > div form fieldset > div {
+  margin-top: 0.5rem;
+}
+
+section.data-entry > div form fieldset button {
+  margin-top: 2rem;
+}
+
+section.data-entry aside button.selected {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=application.css.map */

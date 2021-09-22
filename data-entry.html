@@ -1,0 +1,494 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCQP</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logos/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logos/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logos/logo.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <a href="index.html">Respiratory Care Quality Plataform</a>
+      <span>Hello, Axel Stenson</span>
+    </div>
+    <nav>
+      <div>
+        <a href="#">Data Entry</a>
+        <a href="reports.html">Reporting</a>
+        <a href="verification.html">Verification</a>
+        <a href="manufacturers.html">Manufacturers</a>
+        <a href="providers.html">Providers</a>
+        <a href="qipi.html">QI/PI</a>
+      </div>
+      <a href="login.html">Log Out</a>
+    </nav>
+  </header>
+  <main>
+    <section class="data-entry">
+      <div>
+        <h1>Data Entry</h1>
+        <h3 id="form-title">Admission Details</h3>
+        <form id="admission-details">
+          <fieldset>
+            <label>Patient's first name</label>
+            <input type="text">
+            <label>Patient's last name</label>
+            <input type="text">
+            <label>Patient's hospital ID</label>
+            <input type="number">
+            <label>Patient's account number</label>
+            <input type="number">
+            <label>Admission data</label>
+            <input type="date">
+            <label>Admission time</label>
+            <input type="time">
+            <label>Admission type</label>
+            <div>
+              <input type="radio" checked>
+              <label>Initial admission</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Related admission or readmission</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <label>Admission status</label>
+            <div>
+              <input type="radio" checked>
+              <label>Unanticipated or unplanned admission</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Anticipated or planned admission</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Not know/Not recorded</label>
+            </div>
+            <label>Admission source</label>
+            <div>
+              <input type="radio" checked>
+              <label>Direct from scene of injury</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Transfer from an emergency department or ambulatory care center</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Transfer from another acute care facility</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Admissions from burn center outpatient office/clinic</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Not know/Not recorded</label>
+            </div>
+            <label>Admission category</label>
+            <div>
+              <input type="radio" checked>
+              <label>Acute</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Non-acute</label>
+            </div>
+            <label>Transport mode</label>
+            <div>
+              <input type="radio" checked>
+              <label>Ground ambulance</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Helicopter ambulance</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Fixed-wing ambulance</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Private/Public Vehicle/Walk in</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Police</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Not know/Not recorded</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Other</label>
+            </div>
+            <button class="btn btn-primary">Save</button>
+          </fieldset>
+        </form>
+        <form id="demographic-information">
+          <fieldset>
+            <label>Patient lives in the United States</label>
+            <div>
+              <input type="radio" checked>
+              <label>Yes</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>No</label>
+            </div>
+            <label>Patient's home country</label>
+            <input type="text">
+            <label>Patient's home postal code</label>
+            <input type="text">
+            <div>
+              <input type="radio">
+              <label>Not know/Not recorded</label>
+            </div>
+            <label>Date of birth</label>
+            <input type="date">
+            <div>
+              <input type="radio">
+              <label>Not know/Not recorded</label>
+            </div>
+            <label>Age</label>
+            <input type="number">
+            <div>
+              <input type="radio">
+              <label>Not know/Not recorded</label>
+            </div>
+            <label>Age units</label>
+            <div>
+              <input type="radio" checked>
+              <label>Years</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Months</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Days</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Hours</label>
+            </div>
+            <label>Race (categories from 2020 Census)</label>
+            <label>Ethnicity</label>
+            <div>
+              <input type="radio" checked>
+              <label>Hispanic or latino</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Not hispanic or latino</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Not know/Not recorded</label>
+            </div>
+            <label>Sex</label>
+            <div>
+              <input type="radio" checked>
+              <label>Male</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Female</label>
+            </div>
+            <label>Marital status</label>
+            <div>
+              <input type="radio" checked>
+              <label>Single</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Married<label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Domestic partnership</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Separated</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Divorced</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Widowed</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <label>Patient's occupation, primary</label>
+            <div>
+              <input type="radio" checked>
+              <label>Architecture or engineering occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Arts, design, entertainment, sports, or media occupation<label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Building and grounds cleaning and maintenance</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Business or financial operations occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Community or social services occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Computer or mathematical occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Construction or extraction occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Education, training, instruction or library occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Farming, fishing, or forestry occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Firefighter occupation<label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Fire preparation or serving related occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Healthcare practitioner or technician occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Healthcare support occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Homemaker occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Installation, maintenance and repair</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Legal occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Life, physical or social science occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Management occupation<label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Military specific occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Office and admnistrative support occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Personal care or service occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Production occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Protective service occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Sales and related occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Student</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Transportation and material moving occupation</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Unemployed</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Not know/Not recorded</label>
+            </div>
+            <label>Patient's occupation, secondary</label>
+            <input type="text">
+            <label>Living situation</label>
+            <div>
+              <input type="radio" checked>
+              <label>House/Apartment</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>School dormitory<label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Skilled nursing facility</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Adult group home</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Institution/Prison</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Homeless</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Other</label>
+            </div>
+            <div>
+              <input type="radio">
+              <label>Not know/Not recorded</label>
+            </div>
+            <button class="btn btn-primary">Save</button>
+          </fieldset>
+        </form>
+        <form id="medical-information">
+          <fieldset>
+            <label>Age of asthma onset</label>
+            <input type="number">
+            <label>Number of exacerbations</label>
+            <input type="number">
+            <label>Number of invasive ventilations</label>
+            <input type="number">
+            <label>Number of hospital admissions</label>
+            <input type="number">
+            <label>Number of emergency department admissions</label>
+            <input type="number">
+            <label>Regular OCS</label>
+            <input type="text">
+            <label>Intermittent OCS use</label>
+            <input type="text">
+            <label>Asthma control</label>
+            <input type="text">
+          </fieldset>
+          <fieldset>
+            <label>Immunoglobulin E count</label>
+            <input type="number">
+            <label>Blood eosinophil count</label>
+            <input type="number">
+            <label>Forced expiratory volume in one second (FEV)</label>
+            <input type="text">
+            <label>Forced vital capacity (FVC)</label>
+            <input type="text">
+            <label>FEV/FVC</label>
+            <input type="text">
+            <label>Reversibility</label>
+            <input type="text">
+            <label>Fractional exhaled nitric oxide (FeNO) test</label>
+            <input type="text">
+            <button class="btn btn-primary">Save</button>
+          </fieldset>
+        </form>
+        <form id="medical-regimen" class="one-row">
+          <fieldset>
+            <label>High dose inhaled corticosteroid</label>
+            <input type="text">
+            <label>ICS + long-acting B-adrenoceptor agonist (LABA)</label>
+            <input type="text">
+            <label>ICS + leukotriene receptor antagonist (LTRA)</label>
+            <input type="text">
+            <label>ICS + LABA + LTRA</label>
+            <input type="text">
+            <label>ICS + LABA + long-acting muscarinic antagonist (LAMA)</label>
+            <input type="text">
+            <label>LTRA</label>
+            <input type="text">
+            <label>Theophylline</label>
+            <input type="text">
+            <label>Anti-immunoglobulin E (IgE)</label>
+            <input type="text">
+            <label>Anti-interlukin-5 (IL5)</label>
+            <input type="text">
+            <label>Macrolide antibiotic</label>
+            <input type="text">
+            <label>Other steroid sparing agent</label>
+            <input type="text">
+            <button class="btn btn-primary">Save</button>
+          </fieldset>
+        </form>
+      </div>
+      <aside>
+        <button class="selected" onclick="changeForm('admission-details', this)">Admission Details</button>
+        <button onclick="changeForm('demographic-information', this)">Demographic Information</button>
+        <button onclick="changeForm('medical-information', this)">Medical Information</button>
+        <button onclick="changeForm('medical-regimen', this)">Medical Regimen</button>
+      </aside>
+    </section>
+  </main>
+  <footer>
+    <div>
+      <img src="assets/images/logos/logo-full.png" alt="RHA's Logo" />
+      <div>
+        <a href="#">About RHA</a>
+        <a href="#">Background</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+    <span>
+      @ Copyright BData 2019-2021
+    </span>
+  </footer>
+</body>
+
+</html>
+
+<script>
+  const values = {
+    'admission-details': 'Admission Details',
+    'demographic-information': 'Demographic Information',
+    'medical-information': "Medical Information",
+    'medical-regimen': 'Medical Regimen'
+  }
+
+  function changeForm(val, elem) {
+    document.querySelectorAll('form').forEach((el) => (el.style.display = 'none'));
+    document.getElementById("form-title").textContent = values[val];
+    document.getElementById(val).style.display = "grid";
+    document.querySelectorAll('aside button').forEach((el) => (el.classList.remove("selected")));
+    elem.classList.add('selected');
+  }
+</script>

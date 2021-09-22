@@ -1,0 +1,305 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCQP</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logos/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logos/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logos/logo.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.0.2/chartjs-plugin-annotation.min.js">
+  </script>
+</head>
+
+<body>
+  <header>
+    <div>
+      <a href="index.html">Respiratory Care Quality Plataform</a>
+      <span>Hello, Axel Stenson</span>
+    </div>
+    <nav>
+      <div>
+        <a href="data-entry.html">Data Entry</a>
+        <a href="reports.html">Reporting</a>
+        <a href="verification.html">Verification</a>
+        <a href="manufacturers.html">Manufacturers</a>
+        <a href="providers.html">Providers</a>
+        <a href="qipi.html">QI/PI</a>
+      </div>
+      <a href="login.html">Log Out</a>
+    </nav>
+  </header>
+  <main>
+    <section class="manufacturers">
+      <h1>Manufacturers</h1>
+      <div class="module-list">
+        <div class="module">
+          <p>Studies</p>
+          <h2>6495</h2>
+        </div>
+        <div class="module">
+          <p>Conditions</p>
+          <h2>3805</h2>
+        </div>
+        <div class="module">
+          <p>Sponsors</p>
+          <h2>1403</h2>
+        </div>
+        <div class="module">
+          <p>Studies by Type</p>
+          <canvas id="bar1" width="100%" height="100%"></canvas>
+        </div>
+        <div class="module">
+          <p>Studies by Condition (Top-10)</p>
+          <canvas id="bar2" width="100%" height="100%"></canvas>
+        </div>
+        <div class="module">
+          <p>Studies by Phase</p>
+          <canvas id="bar3" width="100%" height="100%"></canvas>
+        </div>
+        <div class="module">
+          <p>Studies and Enrollment Averages Over Time</p>
+          <canvas id="mix" width="100%" height="25%"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div>
+      <img src="assets/images/logos/logo-full.png" alt="RHA's Logo" />
+      <div>
+        <a href="#">About RHA</a>
+        <a href="#">Background</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+    <span>
+      @ Copyright BData 2019-2021
+    </span>
+  </footer>
+</body>
+
+</html>
+
+<script>
+  var bar = document.getElementById('bar1').getContext('2d');
+  var bar2 = document.getElementById('bar2').getContext('2d');
+  var bar3 = document.getElementById('bar3').getContext('2d');
+  var mix = document.getElementById('mix').getContext('2d');
+  var barChart1 = new Chart(bar, {
+    type: 'bar',
+    data: {
+      labels: ['Active, not recruiting', 'Completed', 'Enrolling by invitation', 'Not yet recruiting', 'Recruiting',
+        'Suspended', 'Terminated', 'Unknown status', 'Withdraw'
+      ],
+      datasets: [{
+        label: '%',
+        data: [2500, 6200, 50, 740, 5600, 100, 1770, 1500, 700],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      scales: {
+        x: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'study (Count distinct)',
+            padding: {
+              top: 16
+            },
+            font: {
+              weight: 'bold',
+            }
+          },
+        },
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'status',
+            padding: {
+              bottom: 16
+            },
+            font: {
+              weight: 'bold',
+            }
+          },
+        }
+      }
+    }
+  });
+  var barChart2 = new Chart(bar2, {
+    type: 'bar',
+    data: {
+      labels: ['breast cancer', 'prostate cancer', 'acute myeloid cancer', 'non-small cell lung cancer', 'melanoma',
+        'pancreatic cancer', 'lymphoma', 'ovarian cancer', 'colorectal cancer', 'cancer', 'solid tumors'
+      ],
+      datasets: [{
+        label: '%',
+        data: [355, 210, 175, 165, 160, 145, 140, 130, 120, 110, 100],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      scales: {
+        x: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'study (Count distinct)',
+            padding: {
+              top: 16
+            },
+            font: {
+              weight: 'bold',
+            }
+          },
+        },
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'condition',
+            padding: {
+              bottom: 16
+            },
+            font: {
+              weight: 'bold',
+            }
+          },
+        }
+      }
+    }
+  });
+  var barChart3 = new Chart(bar3, {
+    type: 'bar',
+    data: {
+      labels: ['Early Phase 1', 'N/A', 'Phase 1', 'Phase 1/Phase 2', 'Phase 2', 'Phase 2/Phase 3', 'Phase 3',
+        'Phase 4'
+      ],
+      datasets: [{
+        label: '%',
+        data: [200, 2770, 1850, 1200, 3250, 220, 1100, 250],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      scales: {
+        x: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'study (Count distinct)',
+            padding: {
+              top: 16
+            },
+            font: {
+              weight: 'bold',
+            }
+          },
+        },
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'phase',
+            padding: {
+              bottom: 16
+            },
+            font: {
+              weight: 'bold',
+            }
+          },
+        }
+      }
+    }
+  });
+  var mix = new Chart(mix, {
+    data: {
+      labels: ['2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',
+        '2019'
+      ],
+      datasets: [{
+        type: 'bar',
+        label: 'study (Count distinct)',
+        data: [10, 20, 30, 40, 50, 180, 220, 410, 800, 1400, 1800, 1600, 10],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)'
+        ],
+        borderWidth: 1
+      }, {
+        type: 'line',
+        label: 'enrollment (Average)',
+        data: [100, 190, 90, 210, 100, 100, 100, 100, 1200, 200, 220, 200, 50],
+        backgroundColor: [
+        'rgba(255, 99, 132, 1)'
+        ],
+        borderColor: [
+        'rgba(255, 99, 132, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        x: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'start year',
+            padding: {
+              top: 16
+            },
+            font: {
+              weight: 'bold',
+            }
+          },
+        },
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'study (Count distinct)',
+            padding: {
+              bottom: 16
+            },
+            font: {
+              weight: 'bold',
+            }
+          },
+        }
+      }
+    }
+  });
+</script>

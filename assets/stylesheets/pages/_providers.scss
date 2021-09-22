@@ -1,0 +1,40 @@
+section.providers {
+  width: 80%;
+  max-width: $container-max-width;
+
+  table {
+    thead {
+      font-size: .75rem;
+
+      th {
+        width: initial;
+
+        &:first-child {
+          @include tablet {
+            width: 10%;
+          }
+        }
+      }
+    }
+
+    .ball {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      background-color: $light-primary;
+
+      span {
+        width: 100%;
+        color: $white;
+        text-align: center;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}

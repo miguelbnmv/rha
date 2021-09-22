@@ -13,6 +13,10 @@
 
   p {
     margin: $margin-md 0 $margin-sm;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   .overall {
@@ -25,5 +29,9 @@
 
   img {
     margin-top: 2rem;
+  }
+
+  h2 {
+    margin: 0;
   }
 }

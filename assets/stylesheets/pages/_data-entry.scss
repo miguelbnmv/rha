@@ -1,0 +1,63 @@
+section.data-entry {
+  display: grid;
+  grid-template-columns: 1fr 20vw;
+  gap: $margin-lg;
+  width: 80%;
+  max-width: $container-max-width;
+
+  @include desktop-down {
+    grid: auto 1fr / 1fr;
+  }
+
+  >div {
+    @include desktop-down {
+      order: 2;
+    }
+
+    h3 {
+      margin-bottom: $margin-md;
+    }
+
+    form {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: $margin-md;
+
+      @include desktop-down {
+        grid-template-columns: 1fr;
+        gap: $margin-xs;
+      }
+
+      &#admission-details {
+        display: grid;
+      }
+
+      &.one-row {
+        grid-template-columns: 1fr;
+      }
+
+      fieldset {
+        >label {
+          display: block;
+          margin: $margin-md 0 $margin-xs;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+
+        >div {
+          margin-top: $margin-xs;
+        }
+
+        button {
+          margin-top: $margin-md;
+        }
+      }
+    }
+  }
+
+  aside button.selected {
+    text-decoration: underline;
+  }
+}
