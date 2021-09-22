@@ -1,7 +1,7 @@
 table {
   display: flex;
   margin: $margin-md auto 0;
-  text-align: left;
+  text-align: center;
 
   @include tablet {
     display: table;
