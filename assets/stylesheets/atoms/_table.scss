@@ -1,93 +1,37 @@
 table {
-  display: flex;
+  width: 100%;
   margin: $margin-md auto 0;
   text-align: center;
-
-  @include tablet {
-    display: table;
-  }
-
-  td {
-    width: 10rem;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-
-    @include tablet {
-      white-space: inherit;
-    }
-  }
+  border: 1px solid $dark;
 
   th,
   td {
     height: 4rem;
-    padding: 1rem;
+    padding: $margin-xs;
+  }
 
-    @include tablet {
-      display: table-cell;
+  thead th {
+    vertical-align: middle;
+    border-left: 1px solid $dark;
+    border-right: 1px solid $dark;
+    color: $dark;
+    background-color: $primary;
+    text-transform: uppercase;
+
+    &.two-rows {
+      border-bottom: 1px solid $dark;
     }
   }
 
-  thead {
-    display: table-header-group;
-
-    tr {
-      display: flex;
-      flex-direction: column;
-
-      th {
-        vertical-align: middle;
-        color: $primary;
-        border: 1px solid $primary;
-        text-transform: uppercase;
-
-        &:nth-child(2), &:nth-child(4) {
-          @include tablet {
-            width: 10%;
-          }
-        }
-
-        &:last-child, &:nth-last-child(2), &:nth-child(3) {
-          @include tablet {
-            width: 5%;
-          }
-        }
-      }
-
-      @include tablet {
-        display: table-row;
-      }
-    }
-  }
-
-  tbody {
-    display: flex;
-    overflow: auto;
-    width: 100%;
-
-    @include tablet {
-      display: table-row-group;
+  tbody tr {
+    td {
+      vertical-align: middle;
+      border-left: 1px solid $dark;
+      border-right: 1px solid $dark;
     }
 
-    tr {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      background-color: $white;
-
-      td {
-        vertical-align: middle;
-        border: 1px solid $primary;
-      }
-
-      &:nth-child(2n) {
-        background-color: $gray;
-      }
-
-      @include tablet {
-        display: table-row;
-      }
+    &:nth-child(2n) {
+      background-color: $gray;
     }
   }
 }

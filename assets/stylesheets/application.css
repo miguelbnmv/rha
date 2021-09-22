@@ -461,126 +461,39 @@ input:-webkit-autofill:focus {
 }
 
 table {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 100%;
   margin: 2rem auto 0;
   text-align: center;
-}
-
-@media (min-width: 768px) {
-  table {
-    display: table;
-  }
-}
-
-table td {
-  width: 10rem;
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-@media (min-width: 768px) {
-  table td {
-    white-space: inherit;
-  }
+  border: 1px solid #333333;
 }
 
 table th,
 table td {
   height: 4rem;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
-@media (min-width: 768px) {
-  table th,
-  table td {
-    display: table-cell;
-  }
-}
-
-table thead {
-  display: table-header-group;
-}
-
-table thead tr {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-table thead tr th {
+table thead th {
   vertical-align: middle;
-  color: #6A040F;
-  border: 1px solid #6A040F;
+  border-left: 1px solid #333333;
+  border-right: 1px solid #333333;
+  color: #333333;
+  background-color: rgba(255, 99, 132, 0.2);
   text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
-  table thead tr th:nth-child(2), table thead tr th:nth-child(4) {
-    width: 10%;
-  }
-}
-
-@media (min-width: 768px) {
-  table thead tr th:last-child, table thead tr th:nth-last-child(2), table thead tr th:nth-child(3) {
-    width: 5%;
-  }
-}
-
-@media (min-width: 768px) {
-  table thead tr {
-    display: table-row;
-  }
-}
-
-table tbody {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: auto;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  table tbody {
-    display: table-row-group;
-  }
-}
-
-table tbody tr {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  background-color: #FDFFFF;
+table thead th.two-rows {
+  border-bottom: 1px solid #333333;
 }
 
 table tbody tr td {
   vertical-align: middle;
-  border: 1px solid #6A040F;
+  border-left: 1px solid #333333;
+  border-right: 1px solid #333333;
 }
 
 table tbody tr:nth-child(2n) {
   background-color: #E0E0E0;
-}
-
-@media (min-width: 768px) {
-  table tbody tr {
-    display: table-row;
-  }
 }
 
 .landing-btn {
@@ -898,6 +811,11 @@ main {
   margin: 0;
 }
 
+.module table {
+  width: 100%;
+  margin-top: 0;
+}
+
 aside {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1006,7 +924,7 @@ main.login {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #6A040F;
+  background-color: rgba(255, 99, 132, 0.2);
 }
 
 main.login section {
@@ -1109,7 +1027,7 @@ section.verifications {
 
 @media (max-width: 767px) {
   section.verifications .verifications-list {
-    overflow-x: hidden;
+    overflow-x: scroll;
   }
 }
 
@@ -1177,11 +1095,6 @@ section.qipi .module-list {
   }
 }
 
-section.qipi .module-list table {
-  width: 100%;
-  margin-top: 0;
-}
-
 section.manufacturers {
   width: 80%;
   max-width: 1500px;
@@ -1221,18 +1134,14 @@ section.providers {
   max-width: 1500px;
 }
 
+@media (max-width: 1025px) {
+  section.providers {
+    overflow-x: scroll;
+  }
+}
+
 section.providers table thead {
   font-size: .75rem;
-}
-
-section.providers table thead th {
-  width: initial;
-}
-
-@media (min-width: 768px) {
-  section.providers table thead th:first-child {
-    width: 10%;
-  }
 }
 
 section.providers table .ball {
@@ -1255,9 +1164,100 @@ section.providers table .ball span {
   text-align: center;
 }
 
+section.providers .bottom-info {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: 40% 1fr;
+      grid-template-columns: 40% 1fr;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1025px) {
+  section.providers .bottom-info {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+section.providers .bottom-info > div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
+  border-right: 1px solid #E0E0E0;
+}
+
+@media (max-width: 1025px) {
+  section.providers .bottom-info > div {
+    border-right: none;
+    border-bottom: 1px solid #E0E0E0;
+  }
+}
+
+section.providers .bottom-info > div > div {
+  padding: 1rem;
+}
+
+section.providers .bottom-info > div > div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid #E0E0E0;
+}
+
+section.providers .bottom-info > div > div:last-child > div span:first-child {
+  font-weight: bold;
+}
+
+section.providers .bottom-info > div > div:last-child > div:last-child > div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto 1fr;
+      grid-template-columns: auto auto auto 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+section.providers .bottom-info > div > div:last-child > div:last-child > div div {
+  display: -ms-grid;
+  display: grid;
+  gap: 0.5rem;
+  -ms-grid-columns: 1rem 1fr;
+      grid-template-columns: 1rem 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.providers .bottom-info > div > div:last-child > div:last-child > div div div {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #D00000;
+}
+
+section.providers .bottom-info > div > div:last-child > div:last-child > div div:first-child div {
+  background-color: green;
+}
+
+section.providers .bottom-info > div > div:last-child > div:last-child > div div:nth-child(2) div {
+  background-color: yellow;
+}
+
+section.providers .bottom-info > div > div:last-child > div:last-child > div div:last-child div {
+  background-color: #E0E0E0;
+}
+
 section.providers img {
   width: 100%;
-  margin-top: 2rem;
 }
 
 section.data-entry {

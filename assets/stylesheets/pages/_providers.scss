@@ -2,19 +2,13 @@ section.providers {
   width: 80%;
   max-width: $container-max-width;
 
+  @include desktop-down {
+    overflow-x: scroll;
+  }
+
   table {
     thead {
       font-size: .75rem;
-
-      th {
-        width: initial;
-
-        &:first-child {
-          @include tablet {
-            width: 10%;
-          }
-        }
-      }
     }
 
     .ball {
@@ -34,8 +28,77 @@ section.providers {
     }
   }
 
+  .bottom-info {
+    display: grid;
+    gap: $margin-sm;
+    grid-template-columns: 40% 1fr;
+    margin-top: $margin-md;
+
+    @include desktop-down {
+      grid-template-columns: 1fr;
+    }
+
+    >div {
+      display: grid;
+      grid-template-rows: 1fr 2fr;
+      border-right: 1px solid $gray;
+
+      @include desktop-down {
+        border-right: none;
+        border-bottom: 1px solid $gray;
+      }
+
+      >div {
+        padding: $margin-sm;
+
+        &:last-child {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border-top: 1px solid $gray;
+
+          >div span:first-child {
+            font-weight: bold;
+          }
+
+          >div:last-child>div {
+            display: grid;
+            grid-template-columns: auto auto auto 1fr;
+            gap: $margin-sm;
+            margin-top: $margin-xs;
+
+            div {
+              display: grid;
+              gap: $margin-xs;
+              grid-template-columns: 1rem 1fr;
+              align-items: center;
+
+              div {
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                background-color: $light-primary;
+              }
+
+              &:first-child div {
+                background-color: green;
+              }
+
+              &:nth-child(2) div {
+                background-color: yellow;
+              }
+
+              &:last-child div {
+                background-color: $gray;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   img {
     width: 100%;
-    margin-top: 2rem;
   }
 }

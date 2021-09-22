@@ -5,7 +5,7 @@ section.manufacturers {
   .module-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: $margin-md;
 
     .module:last-child {
       grid-column-start: 1;

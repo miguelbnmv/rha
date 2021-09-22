@@ -5,15 +5,10 @@ section.qipi {
   .module-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: $margin-md;
 
     @include desktop-down {
       grid-template-columns: 1fr;
-    }
-
-    table {
-      width: 100%;
-      margin-top: 0;
     }
   }
 }

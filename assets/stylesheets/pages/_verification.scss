@@ -7,7 +7,7 @@ section.verifications {
 
   .verifications-list {
     @include tablet-down {
-      overflow-x: hidden;
+      overflow-x: scroll;
     }
 
     .verifications-controls {
