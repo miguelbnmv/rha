@@ -52,19 +52,19 @@
           <h2>1403</h2>
         </div>
         <div class="module">
-          <p>Studies by Type</p>
+          <p>Studies by type</p>
           <canvas id="bar1" width="100%" height="100%"></canvas>
         </div>
         <div class="module">
-          <p>Studies by Condition (Top-10)</p>
+          <p>Studies by condition (Top-10)</p>
           <canvas id="bar2" width="100%" height="100%"></canvas>
         </div>
         <div class="module">
-          <p>Studies by Phase</p>
+          <p>Studies by phase</p>
           <canvas id="bar3" width="100%" height="100%"></canvas>
         </div>
         <div class="module">
-          <p>Studies and Enrollment Averages Over Time</p>
+          <p>Studies and enrollment averages over time</p>
           <canvas id="mix" width="100%" height="25%"></canvas>
         </div>
       </div>
@@ -117,7 +117,7 @@
           beginAtZero: true,
           title: {
             display: true,
-            text: 'study (Count distinct)',
+            text: 'Study (Count distinct)',
             padding: {
               top: 16
             },
@@ -130,7 +130,7 @@
           beginAtZero: true,
           title: {
             display: true,
-            text: 'status',
+            text: 'Status',
             padding: {
               bottom: 16
             },
@@ -145,8 +145,8 @@
   var barChart2 = new Chart(bar2, {
     type: 'bar',
     data: {
-      labels: ['breast cancer', 'prostate cancer', 'acute myeloid cancer', 'non-small cell lung cancer', 'melanoma',
-        'pancreatic cancer', 'lymphoma', 'ovarian cancer', 'colorectal cancer', 'cancer', 'solid tumors'
+      labels: ['Asthma', 'COPD', 'Severe asthma', 'Chronic sinusitis', 'Cystic fibrosis',
+        'Emphysema', 'IPF', 'Perennial rhinitis', 'Pneumonia', 'Cancer', 'Solid tumors'
       ],
       datasets: [{
         label: '%',
@@ -167,7 +167,7 @@
           beginAtZero: true,
           title: {
             display: true,
-            text: 'study (Count distinct)',
+            text: 'Study (Count distinct)',
             padding: {
               top: 16
             },
@@ -180,7 +180,7 @@
           beginAtZero: true,
           title: {
             display: true,
-            text: 'condition',
+            text: 'Condition',
             padding: {
               bottom: 16
             },
@@ -217,7 +217,7 @@
           beginAtZero: true,
           title: {
             display: true,
-            text: 'study (Count distinct)',
+            text: 'Study (Count distinct)',
             padding: {
               top: 16
             },
@@ -230,7 +230,7 @@
           beginAtZero: true,
           title: {
             display: true,
-            text: 'phase',
+            text: 'Phase',
             padding: {
               bottom: 16
             },
@@ -249,7 +249,7 @@
       ],
       datasets: [{
         type: 'bar',
-        label: 'study (Count distinct)',
+        label: 'Study (Count distinct)',
         data: [10, 20, 30, 40, 50, 180, 220, 410, 800, 1400, 1800, 1600, 10],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
@@ -260,7 +260,7 @@
         borderWidth: 1
       }, {
         type: 'line',
-        label: 'enrollment (Average)',
+        label: 'Enrollment (Average)',
         data: [100, 190, 90, 210, 100, 100, 100, 100, 1200, 200, 220, 200, 50],
         backgroundColor: [
         'rgba(255, 99, 132, 1)'
@@ -277,7 +277,7 @@
           beginAtZero: true,
           title: {
             display: true,
-            text: 'start year',
+            text: 'Start year',
             padding: {
               top: 16
             },
@@ -290,7 +290,7 @@
           beginAtZero: true,
           title: {
             display: true,
-            text: 'study (Count distinct)',
+            text: 'Study (Count distinct)',
             padding: {
               bottom: 16
             },
