@@ -20,6 +20,14 @@ section.providers {
       border-radius: 50%;
       background-color: $light-primary;
 
+      &.green {
+        background-color: $green;
+      }
+
+      &.yellow {
+        background-color: $yellow;
+      }
+
       span {
         width: 100%;
         color: $white;
@@ -81,11 +89,11 @@ section.providers {
               }
 
               &:first-child div {
-                background-color: green;
+                background-color: $green;
               }
 
               &:nth-child(2) div {
-                background-color: yellow;
+                background-color: $yellow;
               }
 
               &:last-child div {
