@@ -479,7 +479,7 @@ table thead th {
   border-left: 1px solid #333333;
   border-right: 1px solid #333333;
   color: #333333;
-  background-color: rgba(255, 99, 132, 0.2);
+  background-color: #FEE1E7;
   text-transform: uppercase;
 }
 
@@ -507,6 +507,7 @@ table tbody tr:nth-child(2n) {
           align-items: center;
   padding: 1rem;
   border: 1px solid #333333;
+  border-color: #D00000;
   border-radius: 0.25rem;
 }
 
@@ -520,7 +521,7 @@ table tbody tr:nth-child(2n) {
 }
 
 .landing-btn:hover {
-  border-color: #D00000;
+  border-color: #333333;
 }
 
 .landing-btn > img {
@@ -637,15 +638,11 @@ header > div span {
 
 header nav {
   height: 5vh;
-  background-color: #D00000;
+  background-color: #333333;
 }
 
 header nav a {
   color: #FDFFFF;
-}
-
-header nav a:hover {
-  color: #333333;
 }
 
 header nav div a {
@@ -679,7 +676,7 @@ footer {
           justify-content: space-between;
   margin-top: 2rem;
   padding: 0 4rem;
-  background-color: #D00000;
+  background-color: #333333;
 }
 
 footer div {
@@ -716,10 +713,6 @@ footer div > a {
   footer div > a {
     margin: 1rem 0 1rem;
   }
-}
-
-footer div > a:hover {
-  color: #333333;
 }
 
 @media (max-width: 767px) {
@@ -831,12 +824,14 @@ aside:last-child {
   margin-bottom: 0;
 }
 
-aside > a, aside > button {
+aside > a,
+aside > button {
   display: block;
   margin-bottom: 0.5rem;
 }
 
-aside > a:last-child, aside > button:last-child {
+aside > a:last-child,
+aside > button:last-child {
   margin-bottom: 0;
 }
 
@@ -924,7 +919,7 @@ main.login {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(255, 99, 132, 0.2);
+  background-color: #FEE1E7;
 }
 
 main.login section {

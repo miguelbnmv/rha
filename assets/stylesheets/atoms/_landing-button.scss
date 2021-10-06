@@ -5,6 +5,7 @@
   align-items: center;
   padding: $margin-sm;
   border: $light-border;
+  border-color: $light-primary;
   border-radius: $b-radius-1;
 
   @include phablet-down {
@@ -15,7 +16,7 @@
   }
 
   &:hover {
-    border-color: $light-primary;
+    border-color: $dark;
   }
 
   >img {

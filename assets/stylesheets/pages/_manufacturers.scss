@@ -10,7 +10,7 @@ section.manufacturers {
     .module:last-child {
       grid-column-start: 1;
       grid-column-end: 4;
-      
+
       @include desktop-down {
         grid-column-start: 1;
         grid-column-end: 1;

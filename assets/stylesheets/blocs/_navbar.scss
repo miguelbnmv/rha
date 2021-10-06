@@ -23,6 +23,7 @@ header {
     >div {
         a {
             @include responsive_font($min: 1.625, $max: 2);
+
             @include phablet-down {
                 margin-bottom: $margin-sm;
                 text-align: center;
@@ -36,14 +37,10 @@ header {
 
     nav {
         height: 5vh;
-        background-color: $light-primary;
+        background-color: $dark;
 
         a {
             color: $white;
-
-            &:hover {
-                color: $dark;
-            }
         }
 
         div a {

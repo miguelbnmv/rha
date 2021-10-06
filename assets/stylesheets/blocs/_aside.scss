@@ -3,13 +3,14 @@ aside {
   margin-bottom: $margin-md;
   padding: $margin-md;
   border-radius: $b-radius-1;
-  box-shadow: 0 0 1rem 0 rgba(51, 51, 51, 0.5);
+  box-shadow: 0 0 1rem 0 $dark-gray;
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  >a, >button {
+  >a,
+  >button {
     display: block;
     margin-bottom: $margin-xs;
 
@@ -43,7 +44,7 @@ aside {
 
   >button {
     text-align: left;
-    
+
     &:hover {
       color: $light-primary;
     }
